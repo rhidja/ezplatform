@@ -16,6 +16,7 @@
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+        <link href="{{ asset("css/mystyle.css", "ezdesign") }}" rel="stylesheet"  media="screen" />
     </head>
 
     <body>
@@ -90,6 +91,8 @@
                         'assets/js/*' %}
             <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
+
+        <script src="{{ asset("js/script.js", "ezdesign") }}"></script>
 
     </body>
 </html>
