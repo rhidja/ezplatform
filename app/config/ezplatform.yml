@@ -48,6 +48,15 @@ ezpublish:
         #site_group:
         #    design: main
 
+        site_group:
+            # existing keys, do not change them
+            content_view:
+                full:
+                    home_page:
+                        template: 'full/home_page.html.twig'
+                        match:
+                            Id\Location: 2
+
         admin_group:
             # System languages. Note that by default, content, content types, and other data are in eng-GB locale,
             # so removing eng-GB from this list may lead to errors or content not being shown, unless you change
