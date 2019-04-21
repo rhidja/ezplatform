@@ -2,6 +2,6 @@
 
 {% block content %}
     <div class="col-xs-10 col-xs-offset-1 text-justified">
-        <h1>Hello World!</h1>
+        {{ render( controller( "AppBundle:Homepage:getAllRides" ) ) }}
     </div>
 {% endblock %}

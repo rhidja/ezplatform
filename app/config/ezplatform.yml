@@ -60,6 +60,11 @@ ezpublish:
                         template: 'full/ride.html.twig'
                         match:
                             Identifier\ContentType: 'ride'
+                line:
+                    ride:
+                        template: 'line/ride.html.twig'
+                        match:
+                            Identifier\ContentType: 'ride'
         admin_group:
             # System languages. Note that by default, content, content types, and other data are in eng-GB locale,
             # so removing eng-GB from this list may lead to errors or content not being shown, unless you change
