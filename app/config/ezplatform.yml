@@ -52,6 +52,11 @@ ezpublish:
 
         site_group:
             # existing keys, do not change them
+            user_registration:
+                templates:
+                    form: 'user/registration_form.html.twig'
+                    confirmation: 'user/registration_confirmation.html.twig'
+
             content_view:
                 full:
                     home_page:
