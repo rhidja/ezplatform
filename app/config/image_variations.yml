@@ -6,3 +6,8 @@ ezpublish:
                     reference: null
                     filters:
                         - {name: geometry/scaledownonly, params: [140, 100]}
+
+                landmark_list:
+                    reference: null
+                    filters:
+                        - {name: geometry/scalewidth, params: [200]}

@@ -60,6 +60,7 @@ ezpublish:
                             Id\Location: 2
                     ride:
                         template: 'full/ride.html.twig'
+                        controller: 'AppBundle:Ride:viewRideWithLandmarks'
                         match:
                             Identifier\ContentType: 'ride'
                 line:
@@ -67,6 +68,11 @@ ezpublish:
                         template: 'line/ride.html.twig'
                         match:
                             Identifier\ContentType: 'ride'
+                    landmark:
+                        template: 'line/landmark.html.twig'
+                        match:
+                            Identifier\ContentType: 'landmark'
+
         admin_group:
             # System languages. Note that by default, content, content types, and other data are in eng-GB locale,
             # so removing eng-GB from this list may lead to errors or content not being shown, unless you change
