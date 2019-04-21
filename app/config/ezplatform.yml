@@ -1,3 +1,6 @@
+imports:
+    - { resource: image_variations.yml }
+
 ezpublish:
     # HttpCache settings, By default 'local' (Symfony HttpCache Proxy), by setting it to 'http' you can point it to Varnish
     http_cache:
@@ -44,7 +47,6 @@ ezpublish:
             http_cache:
                 purge_servers: ['%purge_server%']
                 varnish_invalidate_token: '%varnish_invalidate_token%'
-
         #site_group:
         #    design: main
 
