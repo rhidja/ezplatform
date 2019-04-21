@@ -21,7 +21,7 @@ class HomepageController extends Controller
         $rootLocation = $locationService->loadLocation($rootLocationId);
 
         return $this->render(
-            'list/rides.html.twig',
+            '@mydesign/list/rides.html.twig',
             [
                 'pagerRides' => $this->findRides($rootLocation, $request),
             ]
