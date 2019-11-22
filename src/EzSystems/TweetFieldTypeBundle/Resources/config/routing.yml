@@ -1,0 +1,3 @@
+ez_systems_tweet_field_type_homepage:
+    path:     /
+    defaults: { _controller: EzSystemsTweetFieldTypeBundle:Default:index }
