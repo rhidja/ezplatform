@@ -4,3 +4,7 @@ services:
         tags:
             - {name: ezpublish.fieldType, alias: eztweet}
             - {name: ezpublish.fieldType.nameable, alias: eztweet}
+
+    EzSystems\TweetFieldTypeBundle\eZ\Publish\FieldType\Tweet\LegacyConverter:
+        tags:
+            - {name: ezpublish.storageEngine.legacy.converter, alias: eztweet}
