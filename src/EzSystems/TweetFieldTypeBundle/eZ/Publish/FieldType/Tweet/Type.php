@@ -178,6 +178,10 @@ class Type extends FieldType implements Nameable
             );
         }
 
+        if ($value->contents === null) {
+            $value->contents = $this->twitterClient->getEmbed($value->url);
+        }
+
         return new PersistenceValue(
             [
                 'data' => $this->toHash($value),
