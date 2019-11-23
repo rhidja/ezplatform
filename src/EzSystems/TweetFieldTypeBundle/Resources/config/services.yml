@@ -5,9 +5,9 @@ services:
         public: false
 
     EzSystems\TweetFieldTypeBundle\:
-        resource: '../../src/EzSystems/TweetFieldTypeBundle/*'
-        exclude: '../../src/EzSystems/TweetFieldTypeBundle/{Entity,Repository}'
+        resource: '../../../TweetFieldTypeBundle/*'
+        exclude: '../../../TweetFieldTypeBundle/{Entity,Repository}'
 
-    EzSystems\TweetFieldTypeBundle\Controller:
-        resource: '../../src/EzSystems/TweetFieldTypeBundle/Controller'
-        tags: ['controller.service_arguments']
+    #EzSystems\TweetFieldTypeBundle\Controller\:
+    #    resource: '../../../TweetFieldTypeBundle/Controller'
+    #    tags: ['controller.service_arguments']
