@@ -15,6 +15,18 @@ use EzSystems\TweetFieldTypeBundle\Twitter\TwitterClientInterface;
 class Type extends FieldType implements Nameable
 {
     /**
+     * @var array
+     */
+    protected $validatorConfigurationSchema = [
+        'TweetValueValidator' => [
+            'authorList' => [
+                'type' => 'array',
+                'default' => []
+            ]
+        ]
+    ];
+
+    /**
      * @var TwitterClientInterface
      */
     protected $twitterClient;
@@ -73,6 +85,43 @@ class Type extends FieldType implements Nameable
     }
 
     /**
+     * @param mixed $validatorConfiguration
+     * @return array|\eZ\Publish\SPI\FieldType\ValidationError[]
+     */
+    public function validateValidatorConfiguration($validatorConfiguration)
+    {
+        $validationErrors = [];
+
+        foreach ($validatorConfiguration as $validatorIdentifier => $constraints) {
+            // Report unknown validators
+            if ($validatorIdentifier !== 'TweetValueValidator') {
+                $validationErrors[] = new ValidationError("Validator '$validatorIdentifier' is unknown");
+                continue;
+            }
+
+            // Validate arguments from TweetValueValidator
+            foreach ($constraints as $name => $value) {
+                switch ($name) {
+                    case 'authorList':
+                        if (!is_array($value)) {
+                            $validationErrors[] = new ValidationError('Invalid authorList argument');
+                        }
+                        foreach ($value as $authorName) {
+                            if (!preg_match('/^[a-z0-9_]{1,15}$/i', $authorName)) {
+                                $validationErrors[] = new ValidationError('Invalid twitter username');
+                            }
+                        }
+                        break;
+                    default:
+                        $validationErrors[] = new ValidationError("Validator parameter '$name' is unknown");
+                }
+            }
+        }
+
+        return $validationErrors;
+    }
+
+    /**
      * @param FieldDefinition $fieldDefinition
      * @param SPIValue $fieldValue
      * @return array|\eZ\Publish\SPI\FieldType\ValidationError[]
@@ -92,9 +141,33 @@ class Type extends FieldType implements Nameable
                 null,
                 ['%url%' => $fieldValue->url]
             );
+
+            return $errors;
+        }
+
+        $author = $m[1];
+        $validatorConfiguration = $fieldDefinition->getValidatorConfiguration();
+        if (!$this->isAuthorApproved($author, $validatorConfiguration)) {
+            $errors[] = new ValidationError(
+                'Twitter user %user% is not in the approved author list',
+                null,
+                ['%user%' => $m[1]]
+            );
         }
 
         return $errors;
+    }
+
+    /**
+     * @param $author
+     * @param $validatorConfiguration
+     * @return bool
+     */
+    private function isAuthorApproved($author, $validatorConfiguration)
+    {
+        return !isset($validatorConfiguration['TweetValueValidator'])
+            || empty($validatorConfiguration['TweetValueValidator']['authorList'])
+            || in_array($author, $validatorConfiguration['TweetValueValidator']['authorList']);
     }
 
     /**

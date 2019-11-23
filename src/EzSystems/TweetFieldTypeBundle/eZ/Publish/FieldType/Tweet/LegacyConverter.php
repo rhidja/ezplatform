@@ -1,6 +1,4 @@
 <?php
-// TweetFieldTypeBundle/eZ/Publish/FieldType/Tweet/LegacyConverter.php
-
 namespace EzSystems\TweetFieldTypeBundle\eZ\Publish\FieldType\Tweet;
 
 use eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter;
@@ -37,6 +35,9 @@ class LegacyConverter implements Converter
      */
     public function toStorageFieldDefinition(FieldDefinition $fieldDef, StorageFieldDefinition $storageDef)
     {
+        $storageDef->dataText1 = json_encode(
+            $fieldDef->fieldTypeConstraints->validators['TweetValueValidator']['authorList']
+        );
     }
 
     /**
@@ -45,6 +46,14 @@ class LegacyConverter implements Converter
      */
     public function toFieldDefinition(StorageFieldDefinition $storageDef, FieldDefinition $fieldDef)
     {
+        $authorList = json_decode($storageDef->dataText1);
+        if (!empty($authorList)) {
+            $fieldDef->fieldTypeConstraints->validators = [
+                'TweetValueValidator' => [
+                    'authorList' => $authorList
+                ],
+            ];
+        }
     }
 
     /**

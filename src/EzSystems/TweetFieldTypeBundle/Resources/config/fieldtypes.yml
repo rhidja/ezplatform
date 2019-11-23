@@ -14,3 +14,4 @@ services:
         autowire: true
         tags:
             - {name: ez.fieldFormMapper.value, fieldType: eztweet}
+            - {name: ez.fieldFormMapper.definition, fieldType: eztweet}
