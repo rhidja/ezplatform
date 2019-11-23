@@ -1,4 +1,13 @@
 services:
-#    ez_systems_tweet_field_type.example:
-#        class: EzSystems\TweetFieldTypeBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    EzSystems\TweetFieldTypeBundle\:
+        resource: '../../src/EzSystems/TweetFieldTypeBundle/*'
+        exclude: '../../src/EzSystems/TweetFieldTypeBundle/{Entity,Repository}'
+
+    EzSystems\TweetFieldTypeBundle\Controller:
+        resource: '../../src/EzSystems/TweetFieldTypeBundle/Controller'
+        tags: ['controller.service_arguments']
