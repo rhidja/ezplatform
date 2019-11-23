@@ -1,0 +1,6 @@
+services:
+    EzSystems\TweetFieldTypeBundle\eZ\Publish\FieldType\Tweet\Type:
+        parent: ezpublish.fieldType
+        tags:
+            - {name: ezpublish.fieldType, alias: eztweet}
+            - {name: ezpublish.fieldType.nameable, alias: eztweet}
