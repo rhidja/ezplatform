@@ -9,3 +9,8 @@ services:
         autowire: true
         tags:
             - {name: ezpublish.storageEngine.legacy.converter, alias: eztweet}
+
+    EzSystems\TweetFieldTypeBundle\eZ\Publish\FieldType\Tweet\FormMapper:
+        autowire: true
+        tags:
+            - {name: ez.fieldFormMapper.value, fieldType: eztweet}
