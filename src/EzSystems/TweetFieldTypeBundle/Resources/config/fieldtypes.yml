@@ -1,0 +1,17 @@
+services:
+    EzSystems\TweetFieldTypeBundle\eZ\Publish\FieldType\Tweet\Type:
+        autowire: true
+        tags:
+            - {name: ezpublish.fieldType, alias: eztweet}
+            - {name: ezpublish.fieldType.nameable, alias: eztweet}
+
+    EzSystems\TweetFieldTypeBundle\eZ\Publish\FieldType\Tweet\LegacyConverter:
+        autowire: true
+        tags:
+            - {name: ezpublish.storageEngine.legacy.converter, alias: eztweet}
+
+    EzSystems\TweetFieldTypeBundle\eZ\Publish\FieldType\Tweet\FormMapper:
+        autowire: true
+        tags:
+            - {name: ez.fieldFormMapper.value, fieldType: eztweet}
+            - {name: ez.fieldFormMapper.definition, fieldType: eztweet}

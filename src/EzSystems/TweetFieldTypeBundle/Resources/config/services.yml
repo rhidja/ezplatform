@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    EzSystems\TweetFieldTypeBundle\:
+        resource: '../../../TweetFieldTypeBundle/*'
+        exclude: '../../../TweetFieldTypeBundle/{Entity,Repository}'
+
+    #EzSystems\TweetFieldTypeBundle\Controller\:
+    #    resource: '../../../TweetFieldTypeBundle/Controller'
+    #    tags: ['controller.service_arguments']

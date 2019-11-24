@@ -55,6 +55,7 @@ class AppKernel extends Kernel
             new Overblog\GraphQLBundle\OverblogGraphQLBundle(),
             // Application
             new AppBundle\AppBundle(),
+            new EzSystems\TweetFieldTypeBundle\EzSystemsTweetFieldTypeBundle(),
         ];
 
         switch ($this->getEnvironment()) {
