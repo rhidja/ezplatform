@@ -1,3 +1,7 @@
+ez_systems_extending_tutorial:
+    resource: "@EzSystemsExtendingTutorialBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ez_systems_tweet_field_type:
     resource: "@EzSystemsTweetFieldTypeBundle/Resources/config/routing.yml"
     prefix:   /

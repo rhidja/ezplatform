@@ -1,0 +1,3 @@
+ez_systems_extending_tutorial_homepage:
+    path:     /
+    defaults: { _controller: EzSystemsExtendingTutorialBundle:Default:index }

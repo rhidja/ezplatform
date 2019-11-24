@@ -16,7 +16,8 @@
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle/",
-            "EzSystems\\TweetFieldTypeBundle\\": "src/EzSystems/TweetFieldTypeBundle/"
+            "EzSystems\\TweetFieldTypeBundle\\": "src/EzSystems/TweetFieldTypeBundle/",
+            "EzSystems\\ExtendingTutorialBundle\\": "src/EzSystems/ExtendingTutorialBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
