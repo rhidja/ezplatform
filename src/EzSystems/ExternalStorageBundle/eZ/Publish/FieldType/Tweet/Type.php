@@ -185,6 +185,7 @@ class Type extends FieldType implements Nameable
         return new PersistenceValue(
             [
                 'data' => $this->toHash($value),
+                'externalData' => $this->toHash($value),
                 'sortKey' => $this->getSortInfo($value),
             ]
         );
