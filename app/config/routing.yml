@@ -1,5 +1,5 @@
 ram34_code_postal_type:
-    resource: "@Ram34CodePostalTypeBundle/Resources/config/routing.yml"
+    resource: "@Ram34CodePostalBundle/Resources/config/routing.yml"
     prefix:   /
 
 ez_systems_external_storage:
