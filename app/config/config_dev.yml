@@ -17,7 +17,7 @@ monolog:
         main:
             type: '%log_type%'
             path: '%log_path%'
-            level: debug
+            level: error
             channels: ['!event']
         console:
             type: console

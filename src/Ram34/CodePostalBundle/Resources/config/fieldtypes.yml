@@ -1,0 +1,5 @@
+services:
+    Ram34\CodePostalBundle\FieldType\CodePostal\Type:
+        tags:
+            - {name: ezpublish.fieldType, alias: codepostal}
+            - {name: ezpublish.fieldType.nameable, alias: codepostal}
