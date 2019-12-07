@@ -1,5 +1,5 @@
 <?php
-namespace Ram34\CodePostalTypeBundle\DependencyInjection;
+namespace Ram34\CodePostalBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -17,7 +17,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('ram_34_code_postal_field_type');
+        $rootNode = $treeBuilder->root('ram_34_code_postal');
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
