@@ -7,3 +7,8 @@ services:
     Ram34\CodePostalBundle\FieldType\CodePostal\LegacyConverter:
         tags:
             - {name: ezpublish.storageEngine.legacy.converter, alias: codepostal}
+
+    Ram34\CodePostalBundle\FieldType\CodePostal\FormMapper:
+        autowire: true
+        tags:
+            - {name: ez.fieldFormMapper.value, fieldType: codepostal}
