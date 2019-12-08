@@ -2,6 +2,14 @@ ez_systems_extending_tutorial:
     resource: "@EzSystemsExtendingTutorialBundle/Resources/config/routing.yml"
     prefix:   /
 
+ram34_code_postal_type:
+    resource: "@Ram34CodePostalBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ez_systems_external_storage:
+    resource: "@EzSystemsExternalStorageBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ez_systems_tweet_field_type:
     resource: "@EzSystemsTweetFieldTypeBundle/Resources/config/routing.yml"
     prefix:   /

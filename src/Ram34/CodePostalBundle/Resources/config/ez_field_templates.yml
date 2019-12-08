@@ -1,0 +1,4 @@
+system:
+    default:
+        field_templates:
+            - {template: Ram34CodePostalBundle:fields:codepostal.html.twig, priority: 0}

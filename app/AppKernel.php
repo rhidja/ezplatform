@@ -56,6 +56,8 @@ class AppKernel extends Kernel
             // Application
             new AppBundle\AppBundle(),
             new EzSystems\TweetFieldTypeBundle\EzSystemsTweetFieldTypeBundle(),
+            new EzSystems\ExternalStorageBundle\EzSystemsExternalStorageBundle(),
+            new Ram34\CodePostalBundle\Ram34CodePostalBundle(),
             new EzSystems\ExtendingTutorialBundle\EzSystemsExtendingTutorialBundle(),
         ];
 
