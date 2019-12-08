@@ -3,3 +3,7 @@ services:
         tags:
             - {name: ezpublish.fieldType, alias: codepostal}
             - {name: ezpublish.fieldType.nameable, alias: codepostal}
+
+    Ram34\CodePostalBundle\FieldType\CodePostal\LegacyConverter:
+        tags:
+            - {name: ezpublish.storageEngine.legacy.converter, alias: codepostal}
