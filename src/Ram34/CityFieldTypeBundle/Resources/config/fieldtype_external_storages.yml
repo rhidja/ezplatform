@@ -1,0 +1,8 @@
+services:
+    Ram34\CityFieldTypeBundle\FieldType\City\CityStorage:
+        autowire: true
+        tags:
+            - {name: ezpublish.fieldType.externalStorageHandler, alias: ramcity}
+
+    Ram34\CityFieldTypeBundle\FieldType\City\CityStorage\Gateway\DoctrineStorage:
+        autowire: true
