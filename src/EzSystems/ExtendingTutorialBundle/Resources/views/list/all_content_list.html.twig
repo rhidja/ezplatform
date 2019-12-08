@@ -17,6 +17,21 @@
 
 {%- block content -%}
     <section class="container my-4">
+        <div class="my-4">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="contentTypeFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Content Type
+                </button>
+                <div class="dropdown-menu" aria-labelledby="contentTypeFilter">
+                    {% for group, types in contentTypes %}
+                        <h6 class="dropdown-header">{{ group }}</h6>
+                        {% for type in types %}
+                            <a class="dropdown-item" href="{{ path('ezsystems_extending_tutorial.all_content_list.list', { 'contentTypeIdentifier': type.identifier }) }}">{{ type.name }}</a>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
         <div class="ez-table-header">
             <div class="ez-table-header__headline">{{ "Content List"|trans }}</div>
         </div>

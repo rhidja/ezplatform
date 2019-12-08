@@ -22,13 +22,17 @@ class AllContentListController extends Controller
         $this->contentTypeService = $contentTypeService;
     }
 
-    public function listAction($page = 1)
+    public function listAction($contentTypeIdentifier = false, int $page = 1)
     {
         $query = new LocationQuery();
 
         $criterions = [
             new Criterion\Visibility(Criterion\Visibility::VISIBLE),
         ];
+
+        if ($contentTypeIdentifier) {
+            $criterions[] = new Criterion\ContentTypeIdentifier($contentTypeIdentifier);
+        }
 
         $query->query = new Criterion\LogicalAnd($criterions);
 
@@ -38,9 +42,16 @@ class AllContentListController extends Controller
         $paginator->setMaxPerPage(8);
         $paginator->setCurrentPage($page);
 
+        $contentTypes = [];
+        $contentTypeGroups = $this->contentTypeService->loadContentTypeGroups();
+        foreach ($contentTypeGroups as $group) {
+            $contentTypes[$group->identifier] = $this->contentTypeService->loadContentTypes($group);
+        }
+
         return $this->render('@EzSystemsExtendingTutorial/list/all_content_list.html.twig', [
             'totalCount' => $paginator->getNbResults(),
             'articles' => $paginator,
+            'contentTypes' => $contentTypes,
         ]);
     }
 }
