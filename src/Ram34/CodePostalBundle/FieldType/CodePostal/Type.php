@@ -77,7 +77,7 @@ class Type extends FieldType implements Nameable
         // Code Postal validation
         if (!preg_match('#^[0-9]{5}$#', $fieldValue->codePostal)) {
             $errors[] = new ValidationError(
-                'Invalid Code Postal %codePostal%',
+                'Invalid Code Postal value %codePostal%, it should contain 5 digits',
                 null,
                 ['%codePostal%' => $fieldValue->codePostal]
             );
