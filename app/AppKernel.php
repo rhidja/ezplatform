@@ -58,6 +58,7 @@ class AppKernel extends Kernel
             new EzSystems\TweetFieldTypeBundle\EzSystemsTweetFieldTypeBundle(),
             new EzSystems\ExternalStorageBundle\EzSystemsExternalStorageBundle(),
             new Ram34\CodePostalBundle\Ram34CodePostalBundle(),
+            new EzSystems\ExtendingTutorialBundle\EzSystemsExtendingTutorialBundle(),
         ];
 
         switch ($this->getEnvironment()) {

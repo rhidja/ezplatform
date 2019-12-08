@@ -1,0 +1,6 @@
+ezsystems_extending_tutorial.all_content_list.list:
+    path: /all_content_list/{page}/{contentTypeIdentifier}
+    defaults:
+        page: 1
+        contentTypeIdentifier: false
+        _controller: EzSystemsExtendingTutorialBundle:AllContentList:list
