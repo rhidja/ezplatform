@@ -1,0 +1,4 @@
+services:
+#    ram34_city_field_type.example:
+#        class: Ram34\CityFieldTypeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
