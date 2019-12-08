@@ -1,3 +1,7 @@
+ram34_city_field_type:
+    resource: "@Ram34CityFieldTypeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ez_systems_extending_tutorial:
     resource: "@EzSystemsExtendingTutorialBundle/Resources/config/routing.yml"
     prefix:   /

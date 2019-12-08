@@ -59,6 +59,7 @@ class AppKernel extends Kernel
             new EzSystems\ExternalStorageBundle\EzSystemsExternalStorageBundle(),
             new Ram34\CodePostalBundle\Ram34CodePostalBundle(),
             new EzSystems\ExtendingTutorialBundle\EzSystemsExtendingTutorialBundle(),
+            new Ram34\CityFieldTypeBundle\Ram34CityFieldTypeBundle(),
         ];
 
         switch ($this->getEnvironment()) {
