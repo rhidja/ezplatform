@@ -11,7 +11,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class NetgenInformationCollectionBundle extends Extension
+class NetgenInformationCollectionExtension extends Extension
 {
     /**
      * {@inheritdoc}
