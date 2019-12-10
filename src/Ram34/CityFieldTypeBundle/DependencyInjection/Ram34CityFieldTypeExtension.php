@@ -5,13 +5,15 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * This is the class that loads and manages your bundle configuration.
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class Ram34CityFieldTypeExtension extends Extension
+class Ram34CityFieldTypeExtension extends Extension  implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}
@@ -24,5 +26,11 @@ class Ram34CityFieldTypeExtension extends Extension
         $loader->load('services.yml');
         $loader->load('fieldtypes.yml');
         $loader->load('fieldtype_external_storages.yml');
+    }
+
+    public function prepend(ContainerBuilder $container)
+    {
+        $config = Yaml::parse(file_get_contents(__DIR__.'/../Resources/config/ez_field_templates.yml'));
+        $container->prependExtensionConfig('ezpublish', $config);
     }
 }
