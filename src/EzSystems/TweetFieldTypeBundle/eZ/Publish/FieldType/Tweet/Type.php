@@ -255,6 +255,9 @@ class Type extends FieldType implements Nameable
             $value->contents = $this->twitterClient->getEmbed($value->url);
         }
 
+        preg_match('#^https?://twitter.com/([^/]+)/status/[0-9]+$#', $value->url, $m);
+        $value->authorUrl = $m[1];
+
         return new PersistenceValue(
             [
                 'data' => $this->toHash($value),
