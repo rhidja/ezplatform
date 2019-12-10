@@ -55,6 +55,11 @@ class AppKernel extends Kernel
             new Overblog\GraphQLBundle\OverblogGraphQLBundle(),
             // Application
             new AppBundle\AppBundle(),
+            new EzSystems\TweetFieldTypeBundle\EzSystemsTweetFieldTypeBundle(),
+            new EzSystems\ExternalStorageBundle\EzSystemsExternalStorageBundle(),
+            new Ram34\CodePostalBundle\Ram34CodePostalBundle(),
+            new EzSystems\ExtendingTutorialBundle\EzSystemsExtendingTutorialBundle(),
+            new Ram34\CityFieldTypeBundle\Ram34CityFieldTypeBundle(),
         ];
 
         switch ($this->getEnvironment()) {

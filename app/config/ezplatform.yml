@@ -1,3 +1,13 @@
+imports:
+    - { resource: image_variations.yml }
+
+ezdesign:
+    # You declare all available designs under "design_list".
+    design_list:
+        # my_design will be composed of "theme1" and "theme2"
+        # "theme1" will be tried first. If a template cannot be found in "theme1", "theme2" will be tried out.
+        mydesign: [mytheme]
+
 ezpublish:
     # HttpCache settings, By default 'local' (Symfony HttpCache Proxy), by setting it to 'http' you can point it to Varnish
     http_cache:
@@ -44,9 +54,37 @@ ezpublish:
             http_cache:
                 purge_servers: ['%purge_server%']
                 varnish_invalidate_token: '%varnish_invalidate_token%'
-
         #site_group:
         #    design: main
+
+        site_group:
+            design: mydesign
+            # existing keys, do not change them
+            user_registration:
+                templates:
+                    form: '@mydesign/user/registration_form.html.twig'
+                    confirmation: '@mydesign/user/registration_confirmation.html.twig'
+
+            content_view:
+                full:
+                    home_page:
+                        template: '@mydesign/full/home_page.html.twig'
+                        match:
+                            Id\Location: 2
+                    ride:
+                        template: '@mydesign/full/ride.html.twig'
+                        controller: 'AppBundle:Ride:viewRideWithLandmarks'
+                        match:
+                            Identifier\ContentType: 'ride'
+                line:
+                    ride:
+                        template: '@mydesign/line/ride.html.twig'
+                        match:
+                            Identifier\ContentType: 'ride'
+                    landmark:
+                        template: '@mydesign/line/landmark.html.twig'
+                        match:
+                            Identifier\ContentType: 'landmark'
 
         admin_group:
             # System languages. Note that by default, content, content types, and other data are in eng-GB locale,

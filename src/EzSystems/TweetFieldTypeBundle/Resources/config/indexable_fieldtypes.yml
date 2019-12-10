@@ -1,0 +1,5 @@
+services:
+    EzSystems\TweetFieldTypeBundle\eZ\Publish\FieldType\Tweet\SearchField:
+        autowire: true
+        tags:
+            - {name: ezpublish.fieldType.indexable, alias: eztweet}

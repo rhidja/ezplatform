@@ -1,0 +1,26 @@
+services:
+#    ez_systems_extending_tutorial.example:
+#        class: EzSystems\ExtendingTutorialBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    EzSystems\ExtendingTutorialBundle\Tab\Dashboard\Everyone\EveryoneArticleTab:
+        autowire: true
+        autoconfigure: true
+        public: false
+        tags:
+            - { name: ezplatform.tab, group: dashboard-everyone }
+
+    EzSystems\ExtendingTutorialBundle\EventListener\:
+        resource: '../../EventListener/*'
+        autowire: true
+        autoconfigure: true
+        public: true
+        tags:
+            - { name: kernel.event_subscriber }
+
+    EzSystems\ExtendingTutorialBundle\Controller\:
+        resource: '../../Controller/*'
+        autowire: true
+        autoconfigure: true
+        public: false
+        exclude: '../../Controller/{Controller}'

@@ -1,0 +1,7 @@
+{% extends "EzPublishCoreBundle::content_fields.html.twig" %}
+
+{% block codepostal_field %}
+    {% apply spaceless %}
+        {{ block( 'simple_block_field' ) }}
+    {% endapply %}
+{% endblock %}
