@@ -1,4 +1,18 @@
 services:
-#    netgen_information_collection.example:
-#        class: Netgen\InformationCollectionBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Netgen\InformationCollectionBundle\:
+        autowire: true
+        resource: '../../*'
+        exclude: '../../{Entity,Repository}'
+
+    Netgen\InformationCollectionBundle\Limitation\AnonymizeCollectionLimitationType:
+        autowire: true
+        arguments:
+            - "@ezpublish.api.persistence_handler"
+        tags:
+            - { name: ezpublish.limitationType, alias: AnonymizeCollection }

@@ -1,4 +1,4 @@
 infocollector:
     read: ~
     delete: ~
-    anonymize: ~
+    anonymize: ["AnonymizeCollection"]
