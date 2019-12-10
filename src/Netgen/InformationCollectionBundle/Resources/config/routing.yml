@@ -1,0 +1,3 @@
+netgen_information_collection_homepage:
+    path:     /
+    defaults: { _controller: NetgenInformationCollectionBundle:Default:index }

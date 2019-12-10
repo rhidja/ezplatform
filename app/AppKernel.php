@@ -60,6 +60,7 @@ class AppKernel extends Kernel
             new Ram34\CodePostalBundle\Ram34CodePostalBundle(),
             new EzSystems\ExtendingTutorialBundle\EzSystemsExtendingTutorialBundle(),
             new Ram34\CityFieldTypeBundle\Ram34CityFieldTypeBundle(),
+            new Netgen\InformationCollectionBundle\NetgenInformationCollectionBundle(),
         ];
 
         switch ($this->getEnvironment()) {
