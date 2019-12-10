@@ -68,7 +68,7 @@ class DoctrineStorage extends Gateway
             ->setParameter(':codePostal', $field->value->externalData['codePostal'])
             ->setParameter(':codeInsee', $field->value->externalData['codeInsee'])
             ->setParameter(':ville', $field->value->externalData['ville'])
-            ->setParameter(':ville', $field->id, PDO::PARAM_INT)
+            ->setParameter(':fieldId', $field->id, PDO::PARAM_INT)
             ->setParameter(':versionNo', $versionInfo->versionNo, PDO::PARAM_INT)
         ;
 
@@ -135,7 +135,11 @@ class DoctrineStorage extends Gateway
             return null;
         }
 
-        return $rows[0];
+        return [
+            'ville' => $rows[0]['ville'],
+            'codeInsee' => $rows[0]['code_insee'],
+            'codePostal' => $rows[0]['code_postal'],
+        ];
     }
 
     protected function hasFieldData($fieldId, $versionNo)
