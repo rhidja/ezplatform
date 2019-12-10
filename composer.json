@@ -19,6 +19,7 @@
             "EzSystems\\TweetFieldTypeBundle\\": "src/EzSystems/TweetFieldTypeBundle/",
             "EzSystems\\ExternalStorageBundle\\": "src/EzSystems/ExternalStorageBundle/",
             "EzSystems\\ExtendingTutorialBundle\\": "src/EzSystems/ExtendingTutorialBundle",
+            "Ram34\\CityFieldTypeBundle\\": "src/Ram34/CityFieldTypeBundle/",
             "Ram34\\CodePostalBundle\\": "src/Ram34/CodePostalBundle/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]

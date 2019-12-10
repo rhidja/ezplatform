@@ -275,4 +275,14 @@ class Type extends FieldType implements Nameable
 
         return new Value($fieldValue->data);
     }
+
+    /**
+     * Returns whether the field type is searchable.
+     *
+     * @return bool
+     */
+    public function isSearchable()
+    {
+        return true;
+    }
 }
