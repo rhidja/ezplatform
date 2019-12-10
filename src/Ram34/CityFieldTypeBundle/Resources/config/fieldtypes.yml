@@ -7,3 +7,8 @@ services:
     Ram34\CityFieldTypeBundle\FieldType\City\LegacyConverter:
         tags:
             - {name: ezpublish.storageEngine.legacy.converter, alias: ramcity}
+
+    Ram34\CityFieldTypeBundle\FieldType\City\FormMapper:
+        autowire: true
+        tags:
+            - {name: ez.fieldFormMapper.value, fieldType: ramcity}
