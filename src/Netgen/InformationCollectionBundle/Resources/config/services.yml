@@ -16,3 +16,11 @@ services:
             - "@ezpublish.api.persistence_handler"
         tags:
             - { name: ezpublish.limitationType, alias: AnonymizeCollection }
+
+    Netgen\InformationCollectionBundle\Limitation\AnonymizeCollectionLimitationMapper:
+        arguments:
+            - "@ezpublish.api.service.content_type"
+            - "@?logger"
+        tags:
+            - { name: ez.limitation.formMapper, limitationType: AnonymizeCollection }
+            - { name: ez.limitation.valueMapper, limitationType: AnonymizeCollection }
