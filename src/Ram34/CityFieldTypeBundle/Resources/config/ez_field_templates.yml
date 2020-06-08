@@ -1,4 +1,0 @@
-system:
-    default:
-        field_templates:
-            - {template:  Ram34CityFieldTypeBundle:fields:ramcity.html.twig, priority: 0}

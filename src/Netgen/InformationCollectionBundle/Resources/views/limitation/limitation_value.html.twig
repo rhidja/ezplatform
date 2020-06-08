@@ -1,7 +1,0 @@
-{% block ez_limitation_anonymizecollection_value %}
-    {% spaceless %}
-        {% for value in values %}
-            {{ value.name }}{% if not loop.last %},{% endif %}
-        {% endfor %}
-    {% endspaceless %}
-{% endblock %}

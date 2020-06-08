@@ -1,7 +1,0 @@
-services:
-
-    EzSystems\ExternalStorageBundle\eZ\Publish\FieldType\Tweet\Type:
-        autowire: true
-        tags:
-            - {name: ezpublish.fieldType, alias: ramtweet}
-            - {name: ezpublish.fieldType.nameable, alias: ramtweet}

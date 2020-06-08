@@ -1,4 +1,0 @@
-netgen_information_collection.infocollector.show:
-    path: /infocollector/show
-    defaults:
-        _controller: NetgenInformationCollectionBundle:InfoCollector:show

@@ -1,4 +1,0 @@
-system:
-    default:
-        limitation_value_templates:
-            - { template: '@NetgenInformationCollectionBundle/limittion/limitation_value.html.twig', priority: 0 }
