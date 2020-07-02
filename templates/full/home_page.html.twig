@@ -2,6 +2,27 @@
 
 {% block content %}
     <div class="col-xs-10 col-xs-offset-1 text-justified">
-        <h1>Hello World!</h1>
+        <table class="table table-hover">
+            <thead>
+            <tr class="table-header">
+                <th>{{ 'Ride'|trans }}</th>
+                <th>{{ 'From'|trans }}</th>
+                <th>{{ 'To'|trans }}</th>
+                <th>{{ 'Distance'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ride in rides.currentPageResults %}
+                {{ render( controller( 'ez_content:viewAction', { 'location': ride.valueObject, 'viewType': 'line' } )) }}
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if rides.haveToPaginate() %}
+            <div class="col-xs-12 text-center">
+                <div class="pagerfanta pagination">
+                    {{ pagerfanta( rides, 'ez', {'routeName': location } ) }}
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
