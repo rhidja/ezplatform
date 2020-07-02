@@ -88,6 +88,10 @@ ezplatform:
                         template: full/home_page.html.twig
                         match:
                             Id\Location: 2
+                    ride:
+                        template: full/ride.html.twig
+                        match:
+                            Identifier\ContentType: ride
 
     url_alias:
         slug_converter:
