@@ -82,6 +82,12 @@ ezplatform:
 
         site:
             languages: [eng-GB]
+            content_view:
+                full:
+                    home_page:
+                        template: full/home_page.html.twig
+                        match:
+                            Id\Location: 2
 
     url_alias:
         slug_converter:

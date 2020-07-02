@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="eZ Platform beginner tutorial">
+
+    <title>eZ Platform Beginner Tutorial</title>
+
+    <script src="{{ asset('bundles/ezplatformadminuiassets/vendors/jquery/dist/jquery.min.js') }}"></script>
+
+    {{ encore_entry_link_tags('tutorial') }}
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" id="total-navbar">
+    <div class="container">
+        <!-- Brand and toggle -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand" href="/">
+                <img alt="Brand" src="{{ asset('../assets/images/logo.png') }}">
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="below-navbar">
+    <div class="container">
+        <div class="row" id="banner">
+            <div class="col-xs-12">
+                <div class="banner-header-block">
+                    <img alt="Go Bike! logo" src="{{ asset('../assets/images/wordmark.png') }}" style="width:100%" />
+                    <h3 class="banner-header">{{ 'Discover new rides! Go Bike!'|trans }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="row regular-content-size">
+            <div class="col-xs-12 box-style">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-color-one">
+    </div>
+    <div class="footer-color-two">
+        <div class="container">
+            <div class="row regular-content-size">
+                <div class="col-xs-8 col-xs-offset-2 footer-links-block">
+                    <ul class="list-inline footer-links">
+                        <li><a href="#">{{ 'About Us'|trans }}</a></li>
+                        <li><a href="/">{{ 'All Rides'|trans }}</a></li>
+                        <li><a href="#">{{ 'Submit a Ride'|trans }}</a></li>
+                        <li><a href="#">{{ 'My Account'|trans }}</a></li>
+                        <li><a href="#">{{ 'FAQ'|trans }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-color-three">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="small">Website design &#38; content © copyright {{ "now"|date("Y") }} Ibexa. This website was made with eZ Platform.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{{ encore_entry_script_tags('tutorial-js') }}
+
+</body>
+</html>
