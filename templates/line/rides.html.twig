@@ -6,7 +6,11 @@
                 {{ content.name }}
             </strong>
             {% if not ez_field_is_empty( content, 'photo' ) %}
-                {{ ez_render_field(content, 'photo') }}
+                {{ ez_render_field(content, 'photo', {
+                    'parameters': {
+                        'alias': 'ride_list'
+                    }
+                }) }}
             {% endif %}
         </a>
     </td>
