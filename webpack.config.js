@@ -12,10 +12,16 @@ Encore.setOutputPath('public/assets/build')
     .enableReactPreset()
     .enableSingleRuntimeChunk();
 
-// Put your config here.
-Encore.addEntry('app_default', [
-    path.resolve(__dirname, './assets/scss/welcome-page.scss'),
-]);
+Encore
+    .addStyleEntry('tutorial', [
+        path.resolve(__dirname, './assets/css/normalize.css'),
+        path.resolve(__dirname, './assets/css/bootstrap.min.css'),
+        path.resolve(__dirname, './assets/css/bootstrap-theme.css'),
+        path.resolve(__dirname, './assets/css/style.css')
+    ])
+    .addEntry('tutorial-js', [
+        path.resolve(__dirname, './assets/js/bootstrap.min.js')
+    ]);
 
 const projectConfig = Encore.getWebpackConfig();
 module.exports = [ eZConfig, ...customConfigs, projectConfig ];
