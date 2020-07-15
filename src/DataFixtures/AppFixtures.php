@@ -56,7 +56,7 @@ class AppFixtures extends Fixture
      */
     public function load(ObjectManager $manager)
     {
-        $rideContentType = $this->contentTypeService->loadContentTypeByIdentifier('Ride');
+        $rideContentType = $this->contentTypeService->loadContentTypeByIdentifier('ride');
 
         foreach ($this->rideDetails() as $rideDetail){
             $this->repository->sudo(function (Repository $repository) use ($rideDetail, $rideContentType) {
